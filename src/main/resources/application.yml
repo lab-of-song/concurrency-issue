@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:13306/ticket-concurrency
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    sql:
+      init:
+        mode: none
+  jpa:
+    show-sql: true
+    hibernate:
+      #      show-sql: true
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        #        use_sql_comments: true
+        highlight_sql: true
+        default_batch_fetch_size: 100
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: trace
